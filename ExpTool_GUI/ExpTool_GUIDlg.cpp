@@ -163,7 +163,7 @@ void CExpTool_GUIDlg::OnOK()
 BOOL CExpTool_GUIDlg::PreTranslateMessage(MSG* pMsg)
 {
 	// TODO: Add your specialized code here and/or call the base class
-	if (pMsg->message == WM_CHAR && pMsg->wParam == VK_RETURN)
+	if (pMsg->message == WM_KEYDOWN && pMsg->wParam == VK_RETURN)
 	{
 		if (pMsg->hwnd == reinterpret_cast<CEdit*>(this->GetDlgItem(IDC_EDIT1))->GetSafeHwnd())
 		{
@@ -185,7 +185,7 @@ BOOL CExpTool_GUIDlg::PreTranslateMessage(MSG* pMsg)
 					AddList(itm.c_str());
 			}
 			
-			pEdit->SetSel(-1);
+			
 		}
 	}
 	return CDialogEx::PreTranslateMessage(pMsg);
